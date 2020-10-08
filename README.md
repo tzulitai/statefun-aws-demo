@@ -4,7 +4,7 @@ This is a complementary demo application to go with the Apache Flink community b
 
 The demo is a simple shopping cart application, whose architecture consists of the following parts:
 * Functions written using Stateful Functions' [Python SDK](https://ci.apache.org/projects/flink/flink-statefun-docs-master/sdk/python.html), serviced via [AWS Lambda](https://aws.amazon.com/lambda/) and [AWS API Gateway](https://aws.amazon.com/api-gateway/) as a serverless deployment.
-* A Flink StateFun cluster running on Kubernetes ([AWS EKS](https://aws.amazon.com/eks/)), playing the role of an [event-driven database](https://flink.apache.org/news/2020/04/07/release-statefun-2.0.0.html#an-event-driven-database) that manages state and message routing for the serverless functions.
+* A StateFun cluster running on Kubernetes ([AWS EKS](https://aws.amazon.com/eks/)), playing the role of an [event-driven database](https://flink.apache.org/news/2020/04/07/release-statefun-2.0.0.html#an-event-driven-database) that manages state and message routing for the serverless functions.
 * [AWS Kinesis](https://aws.amazon.com/kinesis/) streams serving as the ingress and egress of application events.
 * An [AWS S3](https://aws.amazon.com/s3/) bucket to persist periodic checkpoints of the function states for durability and fault-tolerance.
 
