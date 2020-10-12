@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x18protobuf/inventory.proto\"\x1f\n\x0bRequestItem\x12\x10\n\x08quantity\x18\x01 \x01(\x05\",\n\x0cItemReserved\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x05\"/\n\x0fItemUnavailable\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x05\"\x1c\n\x08Reserved\x12\x10\n\x08quantity\x18\x01 \x01(\x05\"\x1b\n\x07InStock\x12\x10\n\x08quantity\x18\x01 \x01(\x05\x62\x06proto3')
+  serialized_pb=_b('\n\x18protobuf/inventory.proto\"\x1f\n\x0bRequestItem\x12\x10\n\x08quantity\x18\x01 \x01(\x05\",\n\x0cItemReserved\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x05\"/\n\x0fItemUnavailable\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x05\"\x1f\n\x0bNumReserved\x12\x10\n\x08quantity\x18\x01 \x01(\x05\"\x1e\n\nNumInStock\x12\x10\n\x08quantity\x18\x01 \x01(\x05\x62\x06proto3')
 )
 
 
@@ -133,15 +133,15 @@ _ITEMUNAVAILABLE = _descriptor.Descriptor(
 )
 
 
-_RESERVED = _descriptor.Descriptor(
-  name='Reserved',
-  full_name='Reserved',
+_NUMRESERVED = _descriptor.Descriptor(
+  name='NumReserved',
+  full_name='NumReserved',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='quantity', full_name='Reserved.quantity', index=0,
+      name='quantity', full_name='NumReserved.quantity', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -160,19 +160,19 @@ _RESERVED = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=156,
-  serialized_end=184,
+  serialized_end=187,
 )
 
 
-_INSTOCK = _descriptor.Descriptor(
-  name='InStock',
-  full_name='InStock',
+_NUMINSTOCK = _descriptor.Descriptor(
+  name='NumInStock',
+  full_name='NumInStock',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='quantity', full_name='InStock.quantity', index=0,
+      name='quantity', full_name='NumInStock.quantity', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -190,15 +190,15 @@ _INSTOCK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=186,
-  serialized_end=213,
+  serialized_start=189,
+  serialized_end=219,
 )
 
 DESCRIPTOR.message_types_by_name['RequestItem'] = _REQUESTITEM
 DESCRIPTOR.message_types_by_name['ItemReserved'] = _ITEMRESERVED
 DESCRIPTOR.message_types_by_name['ItemUnavailable'] = _ITEMUNAVAILABLE
-DESCRIPTOR.message_types_by_name['Reserved'] = _RESERVED
-DESCRIPTOR.message_types_by_name['InStock'] = _INSTOCK
+DESCRIPTOR.message_types_by_name['NumReserved'] = _NUMRESERVED
+DESCRIPTOR.message_types_by_name['NumInStock'] = _NUMINSTOCK
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 RequestItem = _reflection.GeneratedProtocolMessageType('RequestItem', (_message.Message,), dict(
@@ -222,19 +222,19 @@ ItemUnavailable = _reflection.GeneratedProtocolMessageType('ItemUnavailable', (_
   ))
 _sym_db.RegisterMessage(ItemUnavailable)
 
-Reserved = _reflection.GeneratedProtocolMessageType('Reserved', (_message.Message,), dict(
-  DESCRIPTOR = _RESERVED,
+NumReserved = _reflection.GeneratedProtocolMessageType('NumReserved', (_message.Message,), dict(
+  DESCRIPTOR = _NUMRESERVED,
   __module__ = 'protobuf.inventory_pb2'
-  # @@protoc_insertion_point(class_scope:Reserved)
+  # @@protoc_insertion_point(class_scope:NumReserved)
   ))
-_sym_db.RegisterMessage(Reserved)
+_sym_db.RegisterMessage(NumReserved)
 
-InStock = _reflection.GeneratedProtocolMessageType('InStock', (_message.Message,), dict(
-  DESCRIPTOR = _INSTOCK,
+NumInStock = _reflection.GeneratedProtocolMessageType('NumInStock', (_message.Message,), dict(
+  DESCRIPTOR = _NUMINSTOCK,
   __module__ = 'protobuf.inventory_pb2'
-  # @@protoc_insertion_point(class_scope:InStock)
+  # @@protoc_insertion_point(class_scope:NumInStock)
   ))
-_sym_db.RegisterMessage(InStock)
+_sym_db.RegisterMessage(NumInStock)
 
 
 # @@protoc_insertion_point(module_scope)

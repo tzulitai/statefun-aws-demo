@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1cprotobuf/shopping_cart.proto\".\n\tAddToCart\x12\x0f\n\x07item_id\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x05\"x\n\x0f\x41\x64\x64ToCartResult\x12#\n\x04type\x18\x01 \x01(\x0e\x32\x15.AddToCartResult.Type\x12\x0f\n\x07item_id\x18\x02 \x01(\t\x12\x10\n\x08quantity\x18\x03 \x01(\x05\"\x1d\n\x04Type\x12\x0b\n\x07SUCCESS\x10\x00\x12\x08\n\x04\x46\x41IL\x10\x01\"]\n\x08UserCart\x12#\n\x05items\x18\x01 \x03(\x0b\x32\x14.UserCart.ItemsEntry\x1a,\n\nItemsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x1cprotobuf/shopping_cart.proto\".\n\tAddToCart\x12\x0f\n\x07item_id\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x05\"x\n\x0f\x41\x64\x64ToCartResult\x12#\n\x04type\x18\x01 \x01(\x0e\x32\x15.AddToCartResult.Type\x12\x0f\n\x07item_id\x18\x02 \x01(\t\x12\x10\n\x08quantity\x18\x03 \x01(\x05\"\x1d\n\x04Type\x12\x0b\n\x07SUCCESS\x10\x00\x12\x08\n\x04\x46\x41IL\x10\x01\"c\n\x0bItemsInCart\x12&\n\x05items\x18\x01 \x03(\x0b\x32\x17.ItemsInCart.ItemsEntry\x1a,\n\nItemsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\x62\x06proto3')
 )
 
 
@@ -132,22 +132,22 @@ _ADDTOCARTRESULT = _descriptor.Descriptor(
 )
 
 
-_USERCART_ITEMSENTRY = _descriptor.Descriptor(
+_ITEMSINCART_ITEMSENTRY = _descriptor.Descriptor(
   name='ItemsEntry',
-  full_name='UserCart.ItemsEntry',
+  full_name='ItemsInCart.ItemsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='UserCart.ItemsEntry.key', index=0,
+      name='key', full_name='ItemsInCart.ItemsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='UserCart.ItemsEntry.value', index=1,
+      name='value', full_name='ItemsInCart.ItemsEntry.value', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -165,19 +165,19 @@ _USERCART_ITEMSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=251,
-  serialized_end=295,
+  serialized_start=257,
+  serialized_end=301,
 )
 
-_USERCART = _descriptor.Descriptor(
-  name='UserCart',
-  full_name='UserCart',
+_ITEMSINCART = _descriptor.Descriptor(
+  name='ItemsInCart',
+  full_name='ItemsInCart',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='UserCart.items', index=0,
+      name='items', full_name='ItemsInCart.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -186,7 +186,7 @@ _USERCART = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_USERCART_ITEMSENTRY, ],
+  nested_types=[_ITEMSINCART_ITEMSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -196,16 +196,16 @@ _USERCART = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=202,
-  serialized_end=295,
+  serialized_end=301,
 )
 
 _ADDTOCARTRESULT.fields_by_name['type'].enum_type = _ADDTOCARTRESULT_TYPE
 _ADDTOCARTRESULT_TYPE.containing_type = _ADDTOCARTRESULT
-_USERCART_ITEMSENTRY.containing_type = _USERCART
-_USERCART.fields_by_name['items'].message_type = _USERCART_ITEMSENTRY
+_ITEMSINCART_ITEMSENTRY.containing_type = _ITEMSINCART
+_ITEMSINCART.fields_by_name['items'].message_type = _ITEMSINCART_ITEMSENTRY
 DESCRIPTOR.message_types_by_name['AddToCart'] = _ADDTOCART
 DESCRIPTOR.message_types_by_name['AddToCartResult'] = _ADDTOCARTRESULT
-DESCRIPTOR.message_types_by_name['UserCart'] = _USERCART
+DESCRIPTOR.message_types_by_name['ItemsInCart'] = _ITEMSINCART
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 AddToCart = _reflection.GeneratedProtocolMessageType('AddToCart', (_message.Message,), dict(
@@ -222,21 +222,21 @@ AddToCartResult = _reflection.GeneratedProtocolMessageType('AddToCartResult', (_
   ))
 _sym_db.RegisterMessage(AddToCartResult)
 
-UserCart = _reflection.GeneratedProtocolMessageType('UserCart', (_message.Message,), dict(
+ItemsInCart = _reflection.GeneratedProtocolMessageType('ItemsInCart', (_message.Message,), dict(
 
   ItemsEntry = _reflection.GeneratedProtocolMessageType('ItemsEntry', (_message.Message,), dict(
-    DESCRIPTOR = _USERCART_ITEMSENTRY,
+    DESCRIPTOR = _ITEMSINCART_ITEMSENTRY,
     __module__ = 'protobuf.shopping_cart_pb2'
-    # @@protoc_insertion_point(class_scope:UserCart.ItemsEntry)
+    # @@protoc_insertion_point(class_scope:ItemsInCart.ItemsEntry)
     ))
   ,
-  DESCRIPTOR = _USERCART,
+  DESCRIPTOR = _ITEMSINCART,
   __module__ = 'protobuf.shopping_cart_pb2'
-  # @@protoc_insertion_point(class_scope:UserCart)
+  # @@protoc_insertion_point(class_scope:ItemsInCart)
   ))
-_sym_db.RegisterMessage(UserCart)
-_sym_db.RegisterMessage(UserCart.ItemsEntry)
+_sym_db.RegisterMessage(ItemsInCart)
+_sym_db.RegisterMessage(ItemsInCart.ItemsEntry)
 
 
-_USERCART_ITEMSENTRY._options = None
+_ITEMSINCART_ITEMSENTRY._options = None
 # @@protoc_insertion_point(module_scope)

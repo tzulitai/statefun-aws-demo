@@ -39,10 +39,10 @@ message ItemUnavailable {
 // Inventory state
 // ---------------------------------------------------------------------
 
-message Reserved {
+message NumReserved {
     int32 quantity = 1;
 }
 
-message InStock {
+message NumInStock {
     int32 quantity = 1;
 }

@@ -18,7 +18,7 @@
 
 from statefun import kinesis_egress_record
 
-from protobuf.shopping_cart_pb2 import AddToCart, AddToCartResult, UserCart
+from protobuf.shopping_cart_pb2 import AddToCart, AddToCartResult, ItemsInCart
 from protobuf.inventory_pb2 import RequestItem, ItemReserved, ItemUnavailable
 
 import constants
@@ -65,9 +65,9 @@ def add_to_cart_fail(context, event):
 
 
 def __get_user_cart_state(context):
-    user_cart = context.state("cart-items").unpack(UserCart)
+    user_cart = context.state("cart-items").unpack(ItemsInCart)
     if not user_cart:
-        user_cart = UserCart()
+        user_cart = ItemsInCart()
     return user_cart
 
 

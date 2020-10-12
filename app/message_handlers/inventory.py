@@ -18,7 +18,7 @@
 
 import sys
 
-from protobuf.inventory_pb2 import RequestItem, ItemReserved, ItemUnavailable, Reserved, InStock
+from protobuf.inventory_pb2 import RequestItem, ItemReserved, ItemUnavailable, NumReserved, NumInStock
 
 def check_and_reserve(context, event):
     item_request = RequestItem()
@@ -39,9 +39,9 @@ def check_and_reserve(context, event):
 
 
 def __get_num_in_stock_state(context):
-    in_stock = context.state("in-stock").unpack(InStock)
+    in_stock = context.state("in-stock").unpack(NumInStock)
     if not in_stock:
-        in_stock = InStock()
+        in_stock = NumInStock()
         # in this overly simplified example, we assume each inventory has MAX_SIZE items in stock to begin with;
         # in reality, one can imagine an ingress that supplies "re-stocks" for the inventory function
         in_stock.quantity = sys.maxsize
@@ -49,10 +49,10 @@ def __get_num_in_stock_state(context):
 
 
 def __reserve_and_update_state(context, quantity):
-    in_stock = context.state("in-stock").unpack(InStock)
+    in_stock = context.state("in-stock").unpack(NumInStock)
     in_stock.quantity -= quantity
 
-    reserved = context.state("reserved").unpack(Reserved)
+    reserved = context.state("reserved").unpack(NumReserved)
     reserved.quantity += quantity
 
     context.state("in-stock").pack(in_stock)

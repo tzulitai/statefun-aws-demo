@@ -41,6 +41,6 @@ message AddToCartResult {
 // Shopping cart state type
 // ---------------------------------------------------------------------
 
-message UserCart {
+message ItemsInCart {
     map<string, int32> items = 1;
 }
