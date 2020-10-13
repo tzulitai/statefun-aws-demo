@@ -1,6 +1,6 @@
 # Stateful Serverless App with Stateful Functions and AWS
 
-This is a complementary demo application to go with the Apache Flink community blog post, [Stateful Functions Internals: Behind the scenes of Stateful Serverless](https://flink.apache.org/news/2020/10/11/stateful-serverless-internals.html), which walks you through the details of [Stateful Functions'](https://ci.apache.org/projects/flink/flink-statefun-docs-master/) runtime.
+This is a complementary demo application to go with the Apache Flink community blog post, [Stateful Functions Internals: Behind the scenes of Stateful Serverless](https://flink.apache.org/news/2020/10/12/stateful-serverless-internals.html), which walks you through the details of [Stateful Functions'](https://ci.apache.org/projects/flink/flink-statefun-docs-master/) runtime.
 
 The demo is a simple shopping cart application, whose architecture consists of the following parts:
 * Functions written using Stateful Functions' [Python SDK](https://ci.apache.org/projects/flink/flink-statefun-docs-master/sdk/python.html), serviced via [AWS Lambda](https://aws.amazon.com/lambda/) and [AWS API Gateway](https://aws.amazon.com/api-gateway/) as a serverless deployment.
